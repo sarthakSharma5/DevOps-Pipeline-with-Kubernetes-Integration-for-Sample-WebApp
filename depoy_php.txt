@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: pv-webapp
+    labels:
+         app: myweb
+spec:
+    accessModes:
+     -  ReadWriteOnce
+    resources:
+        requests:
+            storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: deploy_web
+    labels:
+         app: myweb
+spec:
+    selector:
+         matchLabels:
+             app: myweb
+             env: production
+    template:
+         metadata:
+              name: pod_web
+              labels:   
+                  env: production
+                  app: myweb
+         spec:
+              containers:
+              -   name: con_web
+                  image: vimal13/apache-webserver-php
+                  ports:
+                  -    containerPort: 80
+                  volumeMounts:
+                  -    mountPath: "/var/www/html"
+                       name: mypvc
+              volumes:
+              -   name: mypvc
+                  persistentVolumeClaim:
+                       claimName: pv-webapp
