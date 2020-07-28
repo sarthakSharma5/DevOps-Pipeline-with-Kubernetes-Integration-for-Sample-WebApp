@@ -22,7 +22,7 @@ spec:
     app: myweb
   type: NodePort
   ports:
-    - nodePort: 33080
+    - nodePort: 31180
       port: 80
       targetPort: 80
 ---
