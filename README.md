@@ -14,3 +14,5 @@ Copy the 4 files to the same directory where the Dockerfile is present
 2. client.crt
 3. client.key
 4. config file
+
+for better understanding visit: https://www.linkedin.com/pulse/integrating-jenkins-kubernetes-sarthak-sharma
