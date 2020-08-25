@@ -7,12 +7,12 @@
 import smtplib
 
 # SET EMAIL LOGIN REQUIREMENTS
-gmail_user = 'sarthaksharma10022000@gmail.com'
-gmail_app_password = 'sxrb rafq allm odop'
+gmail_user = ''
+gmail_app_password = ''
 
 # SET THE INFO ABOUT THE SAID EMAIL
 sent_from = gmail_user
-sent_to = ['sarthaksharma10022000@gmail.com', 'sarthaksharma575@gmail.com']
+sent_to = ['', '']
 sent_subject = "Issue: in with webapp"
 sent_body = """ \n\n App not working \n\n Require urgent code fix """ 
 
